@@ -155,7 +155,7 @@ resource cosmosPrivateEndpointDnsLink 'Microsoft.Network/privateEndpoints/privat
 }
 
 resource containerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = {
-  name: '${replace(prefix,'-','')}acr'
+  name: '${replace(prefix,'-','')}acr01'
   location: location
   sku: {
     name: 'Basic'
@@ -166,7 +166,7 @@ resource containerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-pr
 }
 
 resource keyVault 'Microsoft.KeyVault/vaults@2021-10-01' = {
-  name: 'name'
+  name: 'lmbdvault01'
   location: location
   properties: {
     enabledForDeployment: true
