@@ -219,3 +219,13 @@ resource keyVaultSecret 'Microsoft.KeyVault/vaults/secrets@2019-09-01' = {
   }
 }
 
+output vNetId string = virtualNetwork.id
+output vnetName string = virtualNetwork.name
+output ContainerRegistryName string = containerRegistry.name
+output ContainerRegistryUsername string = containerRegistry.name
+output SecretKeyVaultName string = keyVault.name
+output ContainerRegistrySecret string = split(keyVaultSecret.name,'/')[0]
+output CosmosAccountName string = cosmosDbAccount.name
+output CosmosDbName string = sqlDb.name
+output CosmosStateContainerName string = stateContainerName.name
+output ComosSqlContainerName string = sqlContainerName.name
