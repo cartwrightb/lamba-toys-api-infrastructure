@@ -1,16 +1,42 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-      "location": {
-        "value": "westeurope"
-      },
-      "prefix": {
-        "value": "lmbd-dev"
-      },
-      "vNetId": {
-        "value": "/subscriptions/c157cc1a-7a12-40ee-a0c6-014f44e0be60/resourceGroups/lamba-api-dev/providers/Microsoft.Network/virtualNetworks/lmbd-dev-vnet"
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "prefix": {
+      "value": "lmbd-dev"
+    },
+    "vNetId": {
+      "value": "/subscriptions/c157cc1a-7a12-40ee-a0c6-014f44e0be60/resourceGroups/lamba-api-dev/providers/Microsoft.Network/virtualNetworks/lmbd-dev-vnet"
+    },
+    "containerRegistryName": {
+      "value": "lmbddevacr"
+    },
+    "containerRegistryUsername": {
+      "value": "lmbddevacr"
+    },
+    "containerVersion": {
+      "value": "latest"
+    },
+    "cosmosAccountName": {
+      "value": "lmbd-dev-cosmos-account-cartwrightb"
+    },
+    "cosmosDbName": {
+      "value": "lmbd-dev-sqldb"
+    },
+    "cosmosContainerName": {
+      "value": "lmbd-dev-state"
+    },
+
+    "containerRegistryPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/c157cc1a-7a12-40ee-a0c6-014f44e0be60/resourceGroups/lamba-api-dev/providers/Microsoft.KeyVault/vaults/lmbdvault01"
+        },
+        "secretName": "acrAdminPassword"
+        }
       }
-      
-    }
   }
+}
